@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Matrix Multiplication</title>
+    <style>
+      table {border-collapse: collapse;}
+      table,tr,td{border: 1px solid rgb(0, 0, 0); padding: 10px;}
+      input[type='text'] {width: 350px; margin-bottom: 5px; padding: 10px; font-size: 14px;}
+  </style>
+  </head>
+  
+  <body>
+    <h3> 4x4 Matrix1을 입력합니다.</h3>
+  ​1행을 입력: <input type="text" placeholder=" ex) 1 2 3 4 (띄어쓰기)"><br>
+  2행을 입력: <input type="text" placeholder=" ex) 2 3 4 5 (띄어쓰기)"><br>
+  3행을 입력: <input type="text" placeholder=" ex) 7 8 3 5 (띄어쓰기)"><br>
+  4행을 입력: <input type="text" placeholder=" ex) 3 6 4 7 (띄어쓰기)"><br>
+  
+   <button onclick="inputMa1()" style="height:25px; width:100px;">입력하기</button>
+
+   <h3> 4x4 Matrix2를 입력합니다.</h3>
+   ​1행을 입력: <input type="text" placeholder=" ex) 1 2 3 4 (띄어쓰기)"><br>
+   2행을 입력: <input type="text" placeholder=" ex) 2 3 4 5 (띄어쓰기)"><br>
+   3행을 입력: <input type="text" placeholder=" ex) 7 8 3 5 (띄어쓰기)"><br>
+   4행을 입력: <input type="text" placeholder=" ex) 3 6 4 7 (띄어쓰기)"><br>
+   
+  <button onclick="inputMa2()" style="height:25px; width:100px;">입력하기</button><br><br>
+
+  <h3>Matrix1 x Matrix2를 계산합니다.</h3>
+  <button onclick="cal()" style="height:25px; width:100px;">계산하기</button>
+  <p></p>
+
+  <script>
+  var matrix1=[];
+ var matrix2=[];
+    function inputMa1(){
+     
+
+      matrix1[0]=new Array();
+      var matrix=document.getElementsByTagName('input')[0].value; //1행 입력
+      matrix=matrix.split(' ');
+      for(i=0;i<matrix.length;i++){
+        matrix1[0][i]=Number(matrix[i]);
+      }
+      matrix1[1]=new Array();
+      var matrix=document.getElementsByTagName('input')[1].value; 
+      matrix=matrix.split(' ');
+      for(i=0;i<matrix.length;i++){
+        matrix1[1][i]=Number(matrix[i]);
+      }
+      matrix1[2]=new Array();
+      var matrix=document.getElementsByTagName('input')[2].value; 
+      matrix=matrix.split(' ');
+      for(i=0;i<matrix.length;i++){
+        matrix1[2][i]=Number(matrix[i]);
+      }
+      matrix1[3]=new Array();
+      var matrix=document.getElementsByTagName('input')[3].value; 
+      matrix=matrix.split(' ');
+      for(i=0;i<matrix.length;i++){
+        matrix1[3][i]=Number(matrix[i]);
+      }
+      
+      console.log(matrix1)
+    }
+
+    function inputMa2(){
+      
+
+      matrix2[0]=new Array();
+      var matrix=document.getElementsByTagName('input')[4].value; //1행 입력
+      matrix=matrix.split(' ');
+      for(i=0;i<matrix.length;i++){
+        matrix2[0][i]=Number(matrix[i]);
+      };
+      matrix2[1]=new Array();
+      var matrix=document.getElementsByTagName('input')[5].value; 
+      matrix=matrix.split(' ');
+      for(i=0;i<matrix.length;i++){
+        matrix2[1][i]=Number(matrix[i]);
+      };
+      matrix2[2]=new Array();
+      var matrix=document.getElementsByTagName('input')[6].value; 
+      matrix=matrix.split(' ');
+      for(i=0;i<matrix.length;i++){
+        matrix2[2][i]=Number(matrix[i]);
+      };
+      matrix2[3]=new Array();
+      var matrix=document.getElementsByTagName('input')[7].value; 
+      matrix=matrix.split(' ');
+      for(i=0;i<matrix.length;i++){
+        matrix2[3][i]=Number(matrix[i]);
+      };
+      
+      console.log(matrix2)
+    }
+
+    function cal(){
+      var calMatrix=[]; 
+
+      for(i=0;i<4;i++){
+        calMatrix[i]='';
+        for(j=0;j<4;j++){ var temp=0;
+          for(k=0;k<4;k++){
+            temp+=matrix1[i][k]*matrix2[k][j];
+          }
+          calMatrix[i]+='<td>'+temp+'</td>'; 
+        }
+      };
+
+      document.getElementsByTagName('p')[0].innerHTML='<table><tr>'
+      +calMatrix[0]+'</tr><tr>'+calMatrix[1]+'</tr><tr>'
+      +calMatrix[2]+'</tr><tr>'+calMatrix[3]+'</tr></table>';
+      console.log(calMatrix);
+
+    }
+
+
+
+  </script>
+
+  </body>
+</html>
