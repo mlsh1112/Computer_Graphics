@@ -1,0 +1,112 @@
+%!
+%% Variables
+/cm { 28.346472 mul }def 
+/TitleFont
+  /Courier-Bold findfont 15 scalefont def
+/NameFont
+  /Courier findfont 10 scalefont def
+
+%% Gramphic Symbol
+ /lineshow{
+	 dup stringwidth pop
+	 9 cm exch sub
+	 2 div
+ }def
+ /Card{
+	0 0 moveto
+	0 5 cm lineto
+	9 cm 5 cm lineto
+	9 cm 0 lineto
+	closepath
+	0 setlinewidth
+	stroke
+}def
+
+/Text{
+	
+	TitleFont setfont
+	(PostScript Programmer)	lineshow 78 moveto
+	(PostScript Programmer) show
+
+	NameFont setfont
+	(Lee Seo Hyun) lineshow 60 moveto
+	(Lee Seo Hyun) show
+
+}def
+
+/wedge{
+	newpath
+	0 0 moveto
+	1 0 translate
+	15 rotate
+	0 15 sin translate
+	0 0 15 sin -90 90 arc
+	closepath
+}def
+
+/UPFlower{
+
+	gsave
+	      9 cm 5 cm translate
+	     180 rotate 
+	      55 55 scale 
+	      0.0 setlinewidth
+	      1 1 3
+	      { 5 div setgray 
+	        gsave
+		      wedge
+	              gsave fill grestore 
+                      0 setgray stroke
+                grestore
+              30 rotate
+              } for
+	grestore
+
+}def
+
+/DownFlower{
+	gsave
+	      0 0 translate 
+	      55 55 scale 
+	      0.0 setlinewidth
+	      1 1 3
+	      { 3.3 div setgray 
+	        gsave
+		      wedge
+	              gsave fill grestore 
+                      0 setgray stroke
+                grestore
+              30 rotate
+              } for
+	grestore
+}def
+
+/Dot{
+	1 setlinewidth
+	newpath
+	0 3 moveto
+       	9 cm 3 lineto
+	
+	3 3 moveto
+	3 5 cm 3 sub lineto
+
+	3 5 cm 3 sub moveto
+	9 cm 5 cm 3 sub  lineto
+
+	9 cm 3 sub 5 cm 3 sub moveto
+	9 cm 3 sub 3 lineto
+	
+	[2 6] 0 setdash stroke
+}def
+
+%% Main Program
+ 6 cm 12 cm translate
+ Card
+ Dot
+ UPFlower
+ DownFlower
+
+ Text
+
+ 
+ showpage

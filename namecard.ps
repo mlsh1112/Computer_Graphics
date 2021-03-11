@@ -1,0 +1,43 @@
+%!
+/box{
+	0 0 moveto
+	0 188 lineto
+	340 188 lineto
+	340 0 lineto
+	closepath
+	0 setlinewidth
+	stroke
+}def
+
+/lineone{
+	/Courier-Bold findfont
+	20 scalefont
+	setfont
+	
+	/Psize{	(Postscript Programmer) stringwidth }store
+	/PlocateX{ 340 Psize sub 2 div }store
+	
+	PlocateX 94 moveto
+	(Postscript Programmer) show
+}def
+
+/linetwo{
+	/Courier findfont
+	10 scalefont
+	setfont
+
+	/Nsize{ (Lee Seo Hyun) stringwidth }store
+	/NlocateX{ 340 Nsize sub 2 div }store
+
+	NlocateX 70 moveto
+	(Lee Seo Hyun) show
+}def
+
+100 100 translate
+box
+lineone
+linetwo
+
+showpage
+
+

@@ -1,0 +1,30 @@
+%!
+/inch {72 mul} def
+/box{
+       	moveto   %%moveto를 마음대로
+	1 inch 0 rlineto
+	0 1 inch rlineto
+	-1 inch 0 rlineto
+	closepath
+	stroke
+}def
+0.5 1.0 0.5 setrgbcolor
+10 setlinewidth
+100 100 box
+0.5 0.0 0.5 setrgbcolor
+5 setlinewidth
+120 120 box
+
+%% my student id is 201723274
+%% i must 274
+%% 2 * x^2 + 7*x + 4 
+/fx{
+	dup dup %% x를 3개 만든다
+	mul %% x^2 / x
+        2 mul %% 2*x^2 / x
+        exch %% x / 2*x^2
+        7 mul %% 7*x / 2*x^2
+        4 add add
+}def
+
+showpage

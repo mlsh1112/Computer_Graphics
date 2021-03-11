@@ -1,0 +1,17 @@
+%!
+/inch {72 mul} def
+/box{
+       	moveto   %%moveto를 마음대로
+	1 inch 0 rlineto
+	0 1 inch rlineto
+	-1 inch 0 rlineto
+	closepath
+	stroke
+}def
+0.5 1.0 0.5 setrgbcolor
+10 setlinewidth
+100 100 box
+0.5 0.0 0.5 setrgbcolor
+5 setlinewidth
+120 120 box
+showpage

@@ -1,0 +1,24 @@
+%!
+/box{
+0 0 moveto
+100 0 lineto
+100 100 lineto
+0 100 lineto
+closepath 
+stroke
+} def
+
+200 200 translate 
+box
+
+gsave
+	45 rotate
+	200 0 translate
+	box
+grestore
+
+200 0 translate
+45 rotate
+box
+
+showpage

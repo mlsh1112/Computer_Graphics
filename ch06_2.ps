@@ -1,0 +1,27 @@
+%!
+/box{
+0 0 moveto
+100 0 lineto
+100 100 lineto
+0 100 lineto
+closepath 
+stroke
+} def
+
+200 200 translate
+
+box
+50 50 translate
+45 rotate
+-50 -50 translate
+box
+
+
+10 {
+	50 50 translate
+	5 rotate
+	-50 -50 translate
+	box
+}repeat
+
+showpage

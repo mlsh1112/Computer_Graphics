@@ -1,0 +1,24 @@
+%!
+100 100 moveto
+200 100 lineto
+200 200 lineto
+100 200 lineto
+closepath
+0.0 1.0 0.0 setrgbcolor
+gsave
+fill
+
+grestore
+30 setlinewidth
+1.0 0.0 0.0 setrgbcolor
+stroke
+
+%% 2*x^2+7*x+4
+/fx{
+	dup dup mul 2 mul
+	exch
+	7 mul
+	4 add add
+}def
+
+showpage
